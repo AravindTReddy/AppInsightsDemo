@@ -15,6 +15,9 @@ class App extends Component {
     }
     this.fetchRequest = this.fetchRequest.bind(this);
   }
+  async componentDidMount() {
+    await this.fetchRequest();
+  }
   fetchRequest() {
     this.interval = setInterval(() => {
     fetch('https://mcn0z3x23a.execute-api.us-east-1.amazonaws.com/dev/check-role', {
